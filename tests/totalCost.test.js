@@ -13,12 +13,12 @@ describe("productsInBasket", () => {
     expect(productsInBasket(basket)).to.eql({ "001": 1 });
   });
 
-  it("If two product with the same code are in the basket, the function returns the combined quantity", () => {
+  it("If two products with the same code are in the basket, the function returns the combined quantity", () => {
     const basket = ["001", "001"];
     expect(productsInBasket(basket)).to.eql({ "001": 2 });
   });
 
-  it("If products are in the basket, the function returns the quantity dependent on the barcode", () => {
+  it("If products are in the basket, the function returns the quantity of each product", () => {
     const basket = ["001", "002", "001", "001", "003"];
     expect(productsInBasket(basket)).to.eql({ "001": 3, "002": 1, "003": 1 });
   });
