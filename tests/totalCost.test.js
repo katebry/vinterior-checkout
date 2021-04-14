@@ -45,6 +45,10 @@ describe("totalPriceReturn ", () => {
 
   it("If multiple products are in the basket, the combined price is returned", () => {
     const basket = ["001", "001", "002"];
+    const otherBasket = ["001", "001", "002", "003"];
+    const otherOtherBasket = ["001", "001", "002", "003", "003"];
     expect(totalPriceReturn(basket, products)).to.be.equal("63.50");
+    expect(totalPriceReturn(otherBasket, products)).to.be.equal("83.45");
+    expect(totalPriceReturn(otherOtherBasket, products)).to.be.equal("103.40");
   });
 });
