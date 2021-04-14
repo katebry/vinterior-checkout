@@ -1,5 +1,5 @@
 const checkout = require("../src/checkout");
-const products = require("../data/products");
+const products = require("../src/data/products");
 const chai = require("chai");
 var expect = chai.expect;
 
