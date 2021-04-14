@@ -1,10 +1,14 @@
-// take in an array of goods [001,001]
-// find the match between the array and the barcode
-
-const productsInBasket = (basket, products) => {
-  // find the quantity of products in the basket
+// finds and returns the quantity of each product in the basket, dependent on barcode.
+const productsInBasket = (basket) => {
   if (basket.length <= 0) return false
-  return true
+
+  const quantityOfProducts = basket.reduce((obj, product) => {
+    obj[product] = ++obj[product] || 1;
+    return obj;
+  }, {});
+  
+  return quantityOfProducts
+  
 };
 
 module.exports = { productsInBasket };
