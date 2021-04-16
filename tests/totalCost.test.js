@@ -1,6 +1,7 @@
 const {
   quantityOfProductsInBasket,
   totalPriceReturn,
+  gbpFormatter,
 } = require("../src/utils/totalCost");
 const products = require("../src/data/products");
 const chai = require("chai");
@@ -45,5 +46,12 @@ describe("totalPriceReturn ", () => {
     expect(totalPriceReturn(basket, products)).to.be.equal("63.50");
     expect(totalPriceReturn(otherBasket, products)).to.be.equal("83.45");
     expect(totalPriceReturn(otherOtherBasket, products)).to.be.equal("103.40");
+  });
+});
+
+describe("gbpFormatter ", () => {
+  it("Formats a value to a string prefixed with the `£` sign.", () => {
+    const value = "18";
+    expect(gbpFormatter(value)).to.be.equal("£18.00");
   });
 });

@@ -1,6 +1,7 @@
 const {
   quantityOfProductsInBasket,
   totalPriceReturn,
+  gbpFormatter
 } = require("./utils/totalCost");
 const {
   veryCheapChairDiscount,
@@ -25,7 +26,7 @@ const checkout = (basket, products) => {
 
   const costAfterDiscount = percentageDiscount(costBeforeDiscount, PERCENTAGE, THRESHOLD)
 
-  return costAfterDiscount
+  return gbpFormatter(costAfterDiscount)
 };
 
 module.exports = checkout;

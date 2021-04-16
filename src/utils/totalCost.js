@@ -17,4 +17,10 @@ const totalPriceReturn = (basket, products) => {
   return combinedPrice.toFixed(2);
 };
 
-module.exports = { quantityOfProductsInBasket, totalPriceReturn };
+
+const gbpFormatter = (value) => {
+  const formattedValue = parseFloat(value).toFixed(2);
+  return `£${formattedValue}`
+}
+
+module.exports = { quantityOfProductsInBasket, totalPriceReturn, gbpFormatter };
