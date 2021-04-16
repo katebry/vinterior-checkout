@@ -14,7 +14,9 @@ describe("checkout", () => {
   });
   it("If the basket contains two Very Cheap Chairs, the discount is applied and the function returns the total cost", () => {
     const basket = ["001", "001"];
+    const basket2 = ["001", "003", "001"]
     expect(checkout(basket, products)).to.equal("£17.00");
+    expect(checkout(basket2, products)).to.equal("£36.95")
   });
   it("If the basket is not eligible, no discount is applied and the function returns the total cost", () => {
     const basket = ["001", "003", "003"];
@@ -22,10 +24,14 @@ describe("checkout", () => {
   });
   it("If the basket contains an amount over £60, the discount is applied and the function returns the total cost", () => {
     const basket = ["002", "002"];
+    const basket2 = ["001","002","003"]
     expect(checkout(basket, products)).to.equal("£81.00");
+    expect(checkout(basket2, products)).to.equal("£66.78");
   });
   it("If the basket contains an amount over £60 and more than two Very Cheap Chairs, both discounts are applied", () => {
     const basket = ["002", "002", "001", "001"];
-    expect(checkout(basket, products)).to.equal("£96.30");
+    const basket2 = ["001", "002", "001", "003"]
+    expect(checkout(basket, products)).to.equal("£96.30");  
+    expect(checkout(basket2, products)).to.equal("£73.76");
   });
 });
