@@ -2,5 +2,7 @@
 
 const PERCENTAGE = 10;
 const THRESHOLD = 60;
+const BARCODE = "001"
+const CHAIRDISCOUNT = 0.75
 
-module.exports = { PERCENTAGE, THRESHOLD };
+module.exports = { PERCENTAGE, THRESHOLD, BARCODE, CHAIRDISCOUNT };

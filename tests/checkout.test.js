@@ -4,9 +4,24 @@ const chai = require("chai");
 var expect = chai.expect;
 
 describe("checkout", () => {
-  it("returns false", () => {
-    expect(checkout(products)).to.be.false
+  it("If no products are in the basket, the function returns false", () => {
+    const basket = [];
+    expect(checkout(basket, products)).to.be.false;
+  });
+  it("If one product is in the basket, the function returns the total cost", () => {
+    const basket = ["001"];
+    expect(checkout(basket, products)).to.equal("9.25");
+  });
+  it("If the basket contains two Very Cheap Chairs, the discount is applied and the function returns the total cost", () => {
+    const basket = ["001", "001"];
+    expect(checkout(basket, products)).to.equal(17);
+  });
+  it("If the basket contains an amount over £60, the discount is applied and the function returns the total cost", () => {
+    const basket = ["002", "002"];
+    expect(checkout(basket, products)).to.equal(81);
+  });
+  it("If the basket contains an amount over £60 and more than two Very Cheap Chairs, both discounts are applied", () => {
+    const basket = ["002", "002", "001", "001"];
+    expect(checkout(basket, products)).to.equal(96.3);
   });
 });
-
-// TODO: checkout tests...

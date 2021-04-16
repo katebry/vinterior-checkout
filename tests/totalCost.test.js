@@ -7,11 +7,6 @@ const chai = require("chai");
 const expect = chai.expect;
 
 describe("quantityOfProductsInBasket", () => {
-  it("If no products are in the basket, the function returns false", () => {
-    const basket = [];
-    expect(quantityOfProductsInBasket(basket)).to.be.false;
-  });
-
   it("If one product is in the basket, the function returns the quantity of the item", () => {
     const basket = ["001"];
     expect(quantityOfProductsInBasket(basket)).to.eql({ "001": 1 });
