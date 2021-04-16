@@ -24,9 +24,9 @@ const checkout = (basket, products) => {
     costBeforeDiscount -= discount
   }
 
-  const costAfterDiscount = percentageDiscount(costBeforeDiscount, PERCENTAGE, THRESHOLD)
+  const costAfterDiscountChecks = percentageDiscount(costBeforeDiscount, PERCENTAGE, THRESHOLD)
 
-  return gbpFormatter(costAfterDiscount)
+  return gbpFormatter(costAfterDiscountChecks)
 };
 
 module.exports = checkout;
