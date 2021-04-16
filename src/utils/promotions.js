@@ -1,8 +1,12 @@
-// TODO:
-// 2+ "Very Cheap Chairs" = 8.50 for each
-
-const veryCheapChairDiscount = () => {
-  return false;
+const veryCheapChairDiscount = (quantity, discountedProduct) => {
+  let addDiscount = false
+  for (const [barcode, amount] of Object.entries(quantity)) {
+    if (barcode === discountedProduct && amount >= 2) {
+      addDiscount = true
+      return addDiscount
+    }
+  }
+  return addDiscount
 };
 
 const percentageDiscount = (total, PERCENTAGE, THRESHOLD) => {
