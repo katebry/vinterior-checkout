@@ -16,6 +16,10 @@ describe("checkout", () => {
     const basket = ["001", "001"];
     expect(checkout(basket, products)).to.equal("£17.00");
   });
+  it("If the basket is not eligible, no discount is applied and the function returns the total cost", () => {
+    const basket = ["001", "003", "003"];
+    expect(checkout(basket, products)).to.equal("£49.15");
+  });
   it("If the basket contains an amount over £60, the discount is applied and the function returns the total cost", () => {
     const basket = ["002", "002"];
     expect(checkout(basket, products)).to.equal("£81.00");
